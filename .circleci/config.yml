@@ -35,17 +35,6 @@ jobs:
          - docker push zyzornatti/reverseproxy:v1
 
 workflows:
- build_push_docker:
-   jobs:
-     - build
- monthly_update:
-   triggers:
-     - schedule:
-         cron: "0 0 3 * *"
-         filters:
-           branches:
-              only:
-                - main
  jobs:
   - build
   - node/test:
