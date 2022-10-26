@@ -36,7 +36,6 @@ jobs:
 
 workflows:
  jobs:
-  - build
   - node/test:
        version: '13'
        pkg-manager: npm
