@@ -7,10 +7,10 @@ jobs:
  build:
   docker:
       - image: 
-	 - zyzornatti/udagram-api-feed
-	 - zyzornatti/udagram-api-user
-	 - zyzornatti/udagram-frontend
-	 - zyzornatti/reverseproxy
+         - zyzornatti/udagram-api-feed
+         - zyzornatti/udagram-api-user
+         - zyzornatti/udagram-frontend
+         - zyzornatti/reverseproxy
 
   steps:
     - checkout
