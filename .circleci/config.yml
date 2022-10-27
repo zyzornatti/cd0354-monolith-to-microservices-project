@@ -23,19 +23,19 @@ jobs:
          - docker build -t udagram-reverseproxy ./reverseproxy
 
         #Tag
-         - docker tag udagram-api-feed zyzornatti/udagram-api-feed:v1
-         - docker tag udagram-api-user zyzornatti/udagram-api-user:v1
-         - docker tag udagram-frontend zyzornatti/udagram-frontend:v1
-         - docker tag reverseproxy zyzornatti/reverseproxy:v1
+         - docker tag udagram-api-feed zyzornatti/udagram-api-feed:latest
+         - docker tag udagram-api-user zyzornatti/udagram-api-user:latest
+         - docker tag udagram-frontend zyzornatti/udagram-frontend:latest
+         - docker tag reverseproxy zyzornatti/reverseproxy:latest
 
         #Auth
           echo DOCKER_PASSWORD | docker login -u DOCKER_USERNAME --password-stdin
 
         #push
-         - docker push zyzornatti/udagram-api-feed:v1
-         - docker push zyzornatti/udagram-api-user:v1
-         - docker push zyzornatti/udagram-api-frontend:v1
-         - docker push zyzornatti/reverseproxy:v1
+         - docker push zyzornatti/udagram-api-feed:latest
+         - docker push zyzornatti/udagram-api-user:latest
+         - docker push zyzornatti/udagram-api-frontend:latest
+         - docker push zyzornatti/reverseproxy:latest
 
 
   
