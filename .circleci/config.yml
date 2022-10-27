@@ -34,9 +34,5 @@ jobs:
          - docker push zyzornatti/udagram-api-frontend:v1
          - docker push zyzornatti/reverseproxy:v1
 
-workflows:
- jobs:
-  - node/test:
-       version: '13'
-       pkg-manager: npm
+
   
