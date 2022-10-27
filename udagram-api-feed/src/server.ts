@@ -2,11 +2,11 @@ import cors from 'cors';
 import express from 'express';
 import {sequelize} from './sequelize';
 
-import {IndexRouter} from './controllers/feed/v0/index.router';
+import {IndexRouter} from './controllers/v0/index.router';
 
 import bodyParser from 'body-parser';
 import {config} from './config/config';
-import {V0_FEED_MODELS} from './controllers/feed/v0/model.index';
+import {V0_FEED_MODELS} from './controllers/v0/model.index';
 
 
 (async () => {
