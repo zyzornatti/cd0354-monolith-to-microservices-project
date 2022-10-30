@@ -4,8 +4,6 @@ services:
  - docker
 
 workflows:
-  build_push_docker:
-
     jobs:
       - build
     steps:
