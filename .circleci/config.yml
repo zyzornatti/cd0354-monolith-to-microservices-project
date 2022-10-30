@@ -3,7 +3,8 @@ version: 2.1
 orbs:
   node: circleci/node@4.7
 
-services:
+jobs:
+ build:
   - docker
 
   steps:
