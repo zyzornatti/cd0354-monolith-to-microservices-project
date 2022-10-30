@@ -1,12 +1,11 @@
+version: 2.1
 
+orbs:
+  node: circleci/node@4.7
 
 jobs:
  build:
   docker:
-      - image: zyzornatti/udagram-api-feed
-      - image: zyzornatti/udagram-api-user
-      - image: zyzornatti/udagram-frontend
-      - image: zyzornatti/reverseproxy
 
   steps:
     - checkout
