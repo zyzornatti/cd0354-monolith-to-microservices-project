@@ -1,7 +1,8 @@
 version: 2.1
+services:
+ - docker
 
-jobs:
-  steps:
+steps:
     - checkout
     - setup_remote_docker
     # build and push Docker image
