@@ -1,4 +1,5 @@
 version: 2.1
+
 services:
  - docker
 
@@ -25,5 +26,18 @@ steps:
           docker push zyzornatti/udagram-api-frontend:v1
           docker push zyzornatti/reverseproxy:v1
 
-
+workflows:
+  build_push_docker:
+    jobs:
+      - build
+  monthly_update:
+   triggers:
+     - schedule:
+         cron: "0 0 3 * *"
+         filter:
+            branches:
+               only:
+                 - main
+    jobs:
+      - build
   
