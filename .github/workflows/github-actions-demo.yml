@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker-compose -f docker-compose-build.yaml build --parallel
-      - run: docker tag udagram-api-feed:latest zyzornatti/udagram-api-feed:v1
-      - run: docker tag udagram-api-user:latest zyzornatti/udagram-api-user:v1
-      - run: docker tag udagram-frontend:latest zyzornatti/udagram-frontend:v1
-      - run: docker tag reverseproxy:latest zyzornatti/reverseproxy:v1
+      - run: docker tag udagram-api-feed:v1 zyzornatti/udagram-api-feed:v1-latest
+      - run: docker tag udagram-api-user:v1 zyzornatti/udagram-api-user:v1-latest
+      - run: docker tag udagram-frontend:v1 zyzornatti/udagram-frontend:v1-latest
+      - run: docker tag reverseproxy:v1 zyzornatti/reverseproxy:v1-latest
       - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_PASSWORD }}" --password-stdin
-      - run: docker push zyzornatti/udagram-api-feed:v1
-      - run: docker push zyzornatti/udagram-api-user:v1
-      - run: docker push zyzornatti/udagram-frontend:v1
-      - run: docker push zyzornatti/reverseproxy:v1
+      - run: docker push zyzornatti/udagram-api-feed:v1-latest
+      - run: docker push zyzornatti/udagram-api-user:v1-latest
+      - run: docker push zyzornatti/udagram-frontend:v1-latest
+      - run: docker push zyzornatti/reverseproxy:v1-latest
