@@ -5,13 +5,17 @@ orbs:
 
 jobs:
  build:
-    - docker
+  docker:
+      - image: zyzornatti/udagram-api-feed:latest
+      - image: zyzornatti/udagram-api-user:latest
+      - image: zyzornatti/udagram-frontend:latest
+      - image: zyzornatti/reverseproxy
 
   steps:
     - checkout
     - setup_remote_docker
     # build and push Docker image
-    - run: |
+    - run: 
         #build
          - docker-compose -f docker-compose-build.yaml build --parallel
 
