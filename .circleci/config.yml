@@ -3,7 +3,12 @@ version: 2.1
 services:
  - docker
 
-steps:
+workflows:
+  build_push_docker:
+
+    jobs:
+      - build
+    steps:
     - checkout
     - setup_remote_docker
     # build and push Docker image
@@ -24,20 +29,4 @@ steps:
           docker push zyzornatti/udagram-api-feed:v1
           docker push zyzornatti/udagram-api-user:v1
           docker push zyzornatti/udagram-api-frontend:v1
-          docker push zyzornatti/reverseproxy:v1
-
-workflows:
-  build_push_docker:
-    jobs:
-      - build
-  monthly_update:
-   triggers:
-     - schedule:
-         cron: "0 0 3 * *"
-         filters:
-            branches:
-               only:
-                 - main
-    jobs:
-      - build
-  
+          docker push zyzornatti/reverseproxy:v1  
