@@ -8,7 +8,7 @@ jobs:
       - image: zyzornatti/udagram-frontend:v1
       - image: zyzornatti/reverseproxy:v1
 
-    steps:
+  steps:
     - checkout
     - setup_remote_docker
     # build and push Docker image
