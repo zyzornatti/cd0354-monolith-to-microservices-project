@@ -6,10 +6,6 @@ orbs:
 jobs:
  build:
   docker:
-      - image: zyzornatti/udagram-api-feed:latest
-      - image: zyzornatti/udagram-api-user:latest
-      - image: zyzornatti/udagram-frontend:latest
-      - image: zyzornatti/reverseproxy
 
   steps:
     - checkout
