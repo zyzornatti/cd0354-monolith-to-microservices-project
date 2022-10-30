@@ -34,7 +34,7 @@ workflows:
    triggers:
      - schedule:
          cron: "0 0 3 * *"
-         filter:
+         filters:
             branches:
                only:
                  - main
