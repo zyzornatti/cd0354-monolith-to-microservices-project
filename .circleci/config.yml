@@ -1,11 +1,11 @@
-version: 2.1
+version: 2.1a
 
 jobs:
  build:
   docker:
       - image: zyzornatti/udagram-frontend:v1
-      - image: zyzornatti/reverseproxy:v1
       - image: zyzornatti/udagram-api-feed:v1
+      - image: zyzornatti/reverseproxy:v1
       - image: zyzornatti/udagram-api-user:v1
 
   steps:
