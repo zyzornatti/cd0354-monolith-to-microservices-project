@@ -3,6 +3,14 @@ version: 2.1
 services:
  - docker
 
+jobs:
+ build:
+  docker:
+      - image: zyzornatti/udagram-api-feed:v1
+      - image: zyzornatti/udagram-api-user:v1
+      - image: zyzornatti/udagram-frontend:v1
+      - image: zyzornatti/reverseproxy:v1
+
 workflows:
     jobs:
       - build
@@ -15,10 +23,10 @@ workflows:
           docker-compose -f docker-compose-build.yaml build --parallel
 
         #Tag
-          docker tag udagram-api-feed zyzornatti/udagram-api-feed:v1
-          docker tag udagram-api-user zyzornatti/udagram-api-user:v1
-          docker tag udagram-frontend zyzornatti/udagram-frontend:v1
-          docker tag reverseproxy zyzornatti/reverseproxy:v1
+          docker tag udagram-api-feed zyzornatti/udagram-api-feed:v1-latest
+          docker tag udagram-api-user zyzornatti/udagram-api-user:v1-latest
+          docker tag udagram-frontend zyzornatti/udagram-frontend:v1-latest
+          docker tag reverseproxy zyzornatti/reverseproxy:v1-latest
 
         #Auth
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
