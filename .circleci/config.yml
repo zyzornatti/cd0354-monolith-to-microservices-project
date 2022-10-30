@@ -15,24 +15,24 @@ jobs:
     - checkout
     - setup_remote_docker
     # build and push Docker image
-    - run: 
+    - run: |
         #build
-         - docker-compose -f docker-compose-build.yaml build --parallel
+          docker-compose -f docker-compose-build.yaml build --parallel
 
         #Tag
-         - docker tag udagram-api-feed zyzornatti/udagram-api-feed:v1
-         - docker tag udagram-api-user zyzornatti/udagram-api-user:v1
-         - docker tag udagram-frontend zyzornatti/udagram-frontend:v1
-         - docker tag reverseproxy zyzornatti/reverseproxy:v1
+          docker tag udagram-api-feed zyzornatti/udagram-api-feed:v1
+          docker tag udagram-api-user zyzornatti/udagram-api-user:v1
+          docker tag udagram-frontend zyzornatti/udagram-frontend:v1
+          docker tag reverseproxy zyzornatti/reverseproxy:v1
 
         #Auth
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
         #push
-         - docker push zyzornatti/udagram-api-feed:v1
-         - docker push zyzornatti/udagram-api-user:v1
-         - docker push zyzornatti/udagram-api-frontend:v1
-         - docker push zyzornatti/reverseproxy:v1
+          docker push zyzornatti/udagram-api-feed:v1
+          docker push zyzornatti/udagram-api-user:v1
+          docker push zyzornatti/udagram-api-frontend:v1
+          docker push zyzornatti/reverseproxy:v1
 
 
   
