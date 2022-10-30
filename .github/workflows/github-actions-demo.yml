@@ -16,7 +16,7 @@ jobs:
       - run: docker tag udagram-api-user:latest zyzornatti/udagram-api-user:v1
       - run: docker tag udagram-frontend:latest zyzornatti/udagram-frontend:v1
       - run: docker tag reverseproxy:latest zyzornatti/reverseproxy:v1
-      - run: echo "${{ secrets.DOCKER_PASSWORD}}" | docker login -u "${{ secrets.DOCKER_PASSWORD}}" --password-stdin
+      - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_PASSWORD }}" --password-stdin
       - run: docker push zyzornatti/udagram-api-feed:v1
       - run: docker push zyzornatti/udagram-api-user:v1
       - run: docker push zyzornatti/udagram-frontend:v1
