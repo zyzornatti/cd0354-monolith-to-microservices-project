@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker-compose -f docker-compose-build.yaml build --parallel
-      - run: docker tag udagram-api-feed:v2 zyzornatti/udagram-api-feed:v3
+      - run: docker tag udagram-api-feed:v3 zyzornatti/udagram-api-feed:v3
       - run: docker tag udagram-api-user:v2 zyzornatti/udagram-api-user:v2-latest
       - run: docker tag udagram-frontend:v2 zyzornatti/udagram-frontend:v2-latest
       - run: docker tag reverseproxy:v2 zyzornatti/reverseproxy:v2-latest
