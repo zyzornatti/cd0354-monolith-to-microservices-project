@@ -1,7 +1,7 @@
-kubectl delete deployment backend-feed
-kubectl delete deployment backend-user
-kubectl delete deployment reverseproxy
-kubectl delete deployment frontend
+kubectl delete deploy backend-user
+kubectl delete deploy backend-feed
+kubectl delete deploy reverseproxy
+kubectl delete deploy frontend
 
 kubectl apply -f feed-deployment.yaml
 kubectl apply -f user-deployment.yaml

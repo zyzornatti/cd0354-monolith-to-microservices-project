@@ -5,7 +5,7 @@ metadata:
 data:
   POSTGRES_HOST: "postgres.cx0cmhhvv9km.us-east-1.rds.amazonaws.com"
   POSTGRES_DB: "postgres"
-  AWS_BUCKET: "my-024908815521-p3bk"
+  AWS_BUCKET: "myp3newbk"
   AWS_REGION: "us-east-1"
   AWS_PROFILE: "default"
   JWT_SECRET: "testing"
