@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-user
+  name: backend-user-api
   labels:
-    app: backend-user
+    app: backend-user-api
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: backend-user
+      app: backend-user-api
   template:
     metadata:
       labels:
-        app: backend-user
+        app: backend-user-api
     spec:
       containers:
-      - name: backend-user
+      - name: backend-user-api
         image: zyzornatti/udagram-api-user:v2-latest
         ports:
         - containerPort: 8080

@@ -1,14 +1,14 @@
 version: "3"
 services:
   reverseproxy:
-      image: reverseproxy:v2
+      image: reverseproxy:v3
       ports:
           - 8080:8080
       restart: always
       depends_on:
-        - backend-user
+        - backend-user-api
         - backend-feed
-  backend-user:
+  backend-user-api:
     image: udagram-api-user:v2
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
