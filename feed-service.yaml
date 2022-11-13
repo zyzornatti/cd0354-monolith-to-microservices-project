@@ -6,6 +6,6 @@ spec:
   selector:
     app: backend-feed
   ports:
-    - protocol: TCP
+    - name: "8080"
       port: 8080
       targetPort: 8080

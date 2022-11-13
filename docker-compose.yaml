@@ -9,7 +9,7 @@ services:
         - backend-user-api
         - backend-feed
   backend-user-api:
-    image: udagram-api-user:v2
+    image: udagram-api-user:v4
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD 
